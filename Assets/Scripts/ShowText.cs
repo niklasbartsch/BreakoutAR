@@ -9,13 +9,14 @@ public class ShowText : MonoBehaviour, ITrackableEventHandler
     private TrackableBehaviour mTrackableBehaviour;
     private bool isTracked = false;
     public Canvas myCanvas;
+    public GameManager gm;
 
 
 
     // Use this for initialization
     void Start()
     {
-        myCanvas.gameObject.active = false;
+        myCanvas.gameObject.SetActive(false);
         mTrackableBehaviour = GetComponent<TrackableBehaviour>();
 
         if (mTrackableBehaviour)
@@ -28,33 +29,27 @@ public class ShowText : MonoBehaviour, ITrackableEventHandler
     {
         if (isTracked)
         {
-            myCanvas.gameObject.active = true;
+            myCanvas.gameObject.SetActive(true);
         }
         else{
-            myCanvas.gameObject.active = false; 
+            myCanvas.gameObject.SetActive(false); 
         }
-
+        gm.isTracked = isTracked;
 
     }
 
     void ITrackableEventHandler.OnTrackableStateChanged(TrackableBehaviour.Status previousStatus, TrackableBehaviour.Status newStatus)
     {
         if (newStatus == TrackableBehaviour.Status.DETECTED ||
-            newStatus == TrackableBehaviour.Status.TRACKED ||
-            newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED)
+            newStatus == TrackableBehaviour.Status.TRACKED)
         {
-
             isTracked = true;
-
         }
-
-        else if (newStatus == TrackableBehaviour.Status.NOT_FOUND &&
-                    previousStatus == TrackableBehaviour.Status.TRACKED)
+        else
         {
             isTracked = false;
-
-     
         }
+
     }
 
 

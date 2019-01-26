@@ -319,6 +319,7 @@
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\PaddleScript.cs" />
     <Compile Include="Assets\ShowText.cs" />
+    <Compile Include="Assets\XPositionScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Editor\Vuforia\CylinderTargetTextures\VuforiaMars_Images\authoringinfo.xml" />
