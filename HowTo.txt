@@ -1,0 +1,8 @@
+Das Spiel BreakoutAR ist sehr einfach zu bedienen.
+
+1. Das richtige Breakout Image öffnen
+2. Brille aufsetzen
+3. Mit betätigen des Touchfeldes auf der Gear360 beginnt das Spiel und der Ball schießt nach oben
+
+
+Sobald der Levelstand auf null ist muss man die App neustarten und das Spiel beginnt von vorne. 
